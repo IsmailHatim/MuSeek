@@ -1,6 +1,6 @@
 # MuSeek
 
-A daily French music guessing game. A hidden song's lyrics are displayed as masked blocks — guess words to reveal them, then identify the title and artist.
+A daily French music guessing game. A hidden song's lyrics are displayed as masked blocks; guess words to reveal them, then identify the title and artist.
 
 Inspired by word-reveal guessing games like Pedantle.
 
@@ -20,13 +20,13 @@ One puzzle per day, same for everyone. Your progress is saved locally and restor
 
 ## Features
 
-- Masked lyrics with `█` blocks matching the exact character length of each word
-- Semantic similarity scoring — near-miss words are scored and color-coded on the lyrics
-- Latest guess shown in heat colors (red → green); previous guesses fade to grayscale
-- Conjugation-aware matching — guessing `"parlait"` reveals all forms of `"parler"` in the lyrics
+- Masked lyrics with a label blocks matching the exact character length of each word
+- Semantic similarity scoring: near-miss words are scored and color-coded on the lyrics
+- Latest guess shown in heat colors; previous guesses fade to grayscale
+- Conjugation-aware matching: guessing a verb reveals all forms of it in the lyrics
 - Dual win conditions: song title + artist name (partial artist match supported)
 - Decade badge shown at load (harmless context, no spoilers)
-- Full client-side state in `localStorage` — no account needed, refreshes resume progress
+- Full client-side state in `localStorage`; no account needed, refreshes resume progress
 
 ---
 
@@ -101,28 +101,4 @@ All settings are environment variables:
 
 ~80 curated songs across six decades: 1960s, 1970s, 1980s, 1990s, 2000s, 2010s. Artists include Aznavour, Brel, Goldman, Mylène Farmer, Indochine, MC Solaar, IAM, Stromae, Angèle, PNL, and more.
 
-Songs are defined in `backend/app/songs.py` — easy to extend.
-
----
-
-## Project structure
-
-```
-backend/
-  app/
-    main.py          FastAPI app + API routes
-    puzzle.py        Tokenizer, normalizer, puzzle builder
-    lyrics.py        Lyrics.ovh + Genius fetch chain
-    songs.py         Curated song pool + date picker
-    similarity.py    Word2Vec scoring
-    nlp_cache.py     spaCy singleton
-    config.py        Environment config
-  static/
-    index.html
-    app.js
-    style.css
-  puzzle.json        Hardcoded fallback song
-  daily_puzzles/     Pre-fetched YYYY-MM-DD.json files
-scripts/
-  daily_cron.py      Daily puzzle pre-fetch script
-```
+Songs are defined in `backend/app/songs.py` are easy to extend.
