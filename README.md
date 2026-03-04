@@ -1,5 +1,11 @@
 # MuSeek
 
+[![GitHub Stars](https://img.shields.io/github/stars/{user}/museek?style=for-the-badge&logo=github&color=FFD700)](https://github.com/{user}/museek/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/{user}/museek?style=for-the-badge&logo=git&logoColor=white&color=4a7cde)](https://github.com/{user}/museek/commits/main)
+[![Python](https://img.shields.io/badge/python-3.11%2B-3572A5?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![License](https://img.shields.io/github/license/{user}/museek?style=for-the-badge&color=lightgrey)](https://github.com/{user}/museek/blob/main/LICENSE)
+
 A daily French music guessing game. A hidden song's lyrics are displayed as masked blocks; guess words to reveal them, then identify the title and artist.
 
 Inspired by word-reveal guessing games like Pedantle.
