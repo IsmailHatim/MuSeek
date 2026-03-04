@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MuSeek</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="header-left">
+          <h1>MuSeek</h1>
+          <span id="decade-badge" class="decade-badge"></span>
+        </div>
+        <div class="header-right">
+          <span id="puzzle-date" class="puzzle-date"></span>
+          <button id="reset-btn" title="Recommencer">↺</button>
+        </div>
+      </header>
+
+      <!-- Win banners -->
+      <div id="title-banner" class="win-banner hidden">
+        <span class="win-icon">🎵</span>
+        <span id="title-banner-text">Titre trouvé !</span>
+      </div>
+      <div id="artist-banner" class="win-banner hidden">
+        <span class="win-icon">🎤</span>
+        <span id="artist-banner-text">Artiste trouvé !</span>
+      </div>
+      <div id="full-win-banner" class="win-banner win-full hidden">
+        Bravo ! Chanson identifiée !
+      </div>
+
+      <div id="main-layout">
+        <!-- Left: lyrics + word guess -->
+        <div id="game-col">
+
+          <!-- Song identity card (hidden until won) -->
+          <div id="song-card" class="hidden">
+            <div id="song-title-display" class="song-title"></div>
+            <div id="song-artist-display" class="song-artist"></div>
+          </div>
+
+          <!-- Word guess form -->
+          <form id="guess-form" autocomplete="off">
+            <input
+              id="guess-input"
+              type="text"
+              placeholder="Devinez un mot…"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button type="submit">Envoyer</button>
+          </form>
+          <p id="unknown-msg" class="hidden feedback-msg"></p>
+
+          <!-- Lyrics token display -->
+          <section id="lyrics-card">
+            <div id="lyrics-display"></div>
+          </section>
+
+          <!-- Title + artist guess area -->
+          <section id="identity-section">
+            <div id="title-guess-block" class="identity-block">
+              <label>Titre de la chanson</label>
+              <form id="title-form" autocomplete="off">
+                <input
+                  id="title-input"
+                  type="text"
+                  placeholder="Votre réponse…"
+                  autocomplete="off"
+                  spellcheck="false"
+                />
+                <button type="submit" id="title-submit-btn">Valider</button>
+              </form>
+              <p id="title-wrong-msg" class="hidden feedback-msg feedback-wrong"></p>
+              <div id="title-solved-display" class="hidden solved-display"></div>
+            </div>
+
+            <div id="artist-guess-block" class="identity-block">
+              <label>Artiste</label>
+              <form id="artist-form" autocomplete="off">
+                <input
+                  id="artist-input"
+                  type="text"
+                  placeholder="Votre réponse…"
+                  autocomplete="off"
+                  spellcheck="false"
+                />
+                <button type="submit" id="artist-submit-btn">Valider</button>
+              </form>
+              <p id="artist-wrong-msg" class="hidden feedback-msg feedback-wrong"></p>
+              <div id="artist-solved-display" class="hidden solved-display"></div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Right: history sidebar -->
+        <aside id="history-col">
+          <div class="hist-header">
+            <span class="hist-num">N°</span>
+            <span class="hist-word">Mot</span>
+          </div>
+          <ul id="history"></ul>
+        </aside>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
